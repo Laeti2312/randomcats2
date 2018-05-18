@@ -32,15 +32,48 @@ bot.on('message', function (message){
     case "rc!laeti" : message.channel.send('Here is the cat of Laeti https://bit.ly/2JVIyrJ')
             break;
 
-    case "rc!mg" : message.channel.send('Here is the cat of MaxGentleman https://bit.ly/2HSUH4e')
-            break;
+    case "r!help" : message.channel.send({embed: {
+			    color: 2551860,
+			    author: {
+			      name: bot.user.username,
+			      icon_url: bot.user.avatarURL
+			    },
+			    title: "RandomCat Help commands **rc!help**",
 
-            case "rc!help" : message.channel.send('**1) rc!pic :** Send a random cat picture\n'+
-            '**2) rc!gif :** Send a random cat gif\n'+
-            '**3) rc!dev :** Send a random cat picture\n'+
-            '**4) rc!mg :** Send the cat of MaxGentleman\n'+
-            '**5) rc!laeti :** Show the cat of Laeti');
-            break;
+			    description: "Type these commands to get some help on how to use RandomCat",
+			    fields: [{
+				name: "rc!dev",
+				value: "show the names of the devolopers of RandomCat"
+			      },
+			      {
+				name: "rc!pic",
+				value: "Send a random cat picture"
+			      },
+			      {
+				name: "rc!gif",
+				value: "Send a random cat gif"
+			      },
+			      {
+				name: "rc!mg",
+				value: "Send the cat of MaxGentleman"
+			      },
+			      {
+				name: "rc!laeti",
+				value: "Show the cat of Laeti"
+			      },
+			      {
+				name: "rc!say",
+				value: "make the bot talk"
+			      },
+			    ],
+			    timestamp: new Date(),
+			    footer: {
+			      icon_url: bot.user.avatarURL,
+			      text: "© RandomCat"
+			    }
+			  }
+			});
+	    break;
   }
 
 if(message.content.toLowerCase().startsWith('rc!say')) {
